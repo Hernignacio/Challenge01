@@ -4,6 +4,7 @@ let amigo1 = [];
 let amigo2 = [];
 let amigo3 = [];
 let amigo4 = [];
+let jugadoresQueJugaron = [];
 
 let grupo = document.getElementById("grupo").value;
 let ingresador = document.getElementById("ingresador").value;
@@ -130,6 +131,12 @@ function sortearAmigo() {
     let grupo = document.getElementById("grupo").value;
     let jugadorActual = document.getElementById("jugadorActual").value.trim(); // Nombre del jugador actual
 
+    // Verificar si el jugador ya jugó
+    if (jugadoresQueJugaron.includes(jugadorActual.toLowerCase())) {
+        alert("Este jugador ya ha jugado. No puede participar nuevamente.");
+        return;
+    }
+
     if (estado == false && grupo !== "0") {
         if (amigo1.length === 0 && amigo2.length === 0 && amigo3.length === 0 && amigo4.length === 0) {
             alert("No hay amigos para sortear");
@@ -198,6 +205,9 @@ function sortearAmigo() {
             amigo4.splice(amigo4.indexOf(amigoSorteado4), 1); // Eliminar el amigo sorteado del arreglo original
             resultadoAmigo.innerHTML = `El amigo sorteado es: ${amigoSorteado4} para el grupo: ${grupo}`;
         }
+
+        // Agregar el jugador actual a la lista de jugadores que ya jugaron
+        jugadoresQueJugaron.push(jugadorActual.toLowerCase());
 
         // Mostrar el resultado por 10 segundos y luego ocultarlo
         setTimeout(() => {
