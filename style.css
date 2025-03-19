@@ -6,6 +6,7 @@
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
+    --color-sorteo: #05DF05;
 }
 
 /* Estilos generales */
@@ -26,6 +27,9 @@ body {
 .main-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin: 5%;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
 }
@@ -39,6 +43,13 @@ body {
     padding: 40px 0 0;
 }
 
+.header-banner h1 p {
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin: 10px 0; /* Espaciado entre párrafos */
+    font-size: 10px; /* Ajusta el tamaño de la fuente si es necesario */
+    line-height:normal; /* Mejora la legibilidad */
+}
+
 /* Sección de entrada */
 .input-section {
     flex: 60%;
@@ -48,17 +59,28 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     width: 100%;
 }
 
 /* Títulos */
+/*instrucciones*/
 .main-title {
+    font-size: 10px;
+    font-family: "Merriweather", serif;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--color-white);
+    text-align: center;
+}
+/*tìtulo*/
+.main-content{
     font-size: 48px;
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
     color: var(--color-white);
+    text-align: center;
 }
 
 .section-title {
@@ -132,17 +154,22 @@ ul {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     margin: 20px 0;
+    padding: 0;
+    text-align: left;
+    border: var(--color-primary);
 }
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: var(--color-primary);
     font-size: 22px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
+    border: var(--color-sorteo);
+    
 }
 
-/* Botón de sortear título */
+/* Botón de sortear y Reset */
 .button-draw {
     display: flex;
     align-items: center;
@@ -159,4 +186,35 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+.button-draw2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+}
+.button-draw2 img {
+    margin-right: 40px;
+}
+.button-draw2:hover {
+    background-color: var(--color-button-hover);
+}
+.select1{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 25px 25px 25px 25px;
+    font-size: 16px;
+}
+.select2{
+    width: 50%;
+    padding: 10px 60px;
+    border: 2px solid #000;
+    border-radius: 25px 25px 25px 25px;
+    font-size: 16px;
+    text-align: left;
+    text-justify: auto;
 }
